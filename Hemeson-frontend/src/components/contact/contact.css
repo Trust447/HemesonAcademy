@@ -36,7 +36,7 @@
     margin: 20px 0;
 }
 
-.contact-col ul li img{
+.contact-col ul li .icons{
     width: 25px;
     margin-right: 10px;
 }
@@ -57,6 +57,14 @@
     display: block;
     margin: 20px 0;
 
+}
+
+.success{
+    color: #000f38;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+    margin: 20px;
 }
 
 
