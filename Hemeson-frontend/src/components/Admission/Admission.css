@@ -1,0 +1,120 @@
+.admissions{
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admission img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.admission{
+    position: relative;
+    flex-basis: 31%;
+}
+
+.caption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 15, 152, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #f3f7fb;
+    cursor: pointer;
+    opacity: 0;
+    padding-top: 70%;
+    transition: 0.5s;
+}
+
+
+.caption h2{
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+.caption h3{
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+}
+
+.caption p{
+    margin: 0 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.admission:hover .caption{
+    opacity: 1;
+    padding-top: 0;
+}
+
+
+
+
+/* ______________________________________MEDIAQUERRY______________________________________ */
+
+@media(max-width: 850px){
+    .caption h2{
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+}
+
+.caption h3{
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+}
+
+.caption p{
+    margin: 0 10px;
+    font-size: 12px;
+    text-align: center;
+}
+}
+
+@media(max-width: 700px){
+    .admissions{
+        flex-direction: column;
+    }
+    
+
+    .admission{
+        flex-basis: 100%;
+        margin: 20px;
+    }
+
+    .caption h2{
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+    .caption h3{
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+.caption p{
+    margin: 0 10px;
+    font-size: 15px;
+    max-width: 200px;
+    text-align: center;
+}
+
+    
+}

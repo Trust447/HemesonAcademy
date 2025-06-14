@@ -1,0 +1,15 @@
+.footer{
+    margin: 10px auto;
+    text-align: center;
+    border-top: 1px solid #797979;
+    padding: 15px 0;
+}
+
+.footer p{
+    font-size: 13px;
+}
+
+.footer .trust{
+    font-size: 11px;
+    margin-top: 5px;
+}
