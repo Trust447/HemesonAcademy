@@ -22,8 +22,20 @@ const Testimonials = () => {
   return (
 
     <div id='Testimonial' className='testimonial'>
-        <div className="nxt-btn"><img src="right-arrow.png" alt="" onClick={slideForward} /></div>
-        <div className="prev-btn"><img src="left-arrow.png" alt="" onClick={slideBackward} /></div>
+        <div className="prev-btn" onClick={slideBackward}>
+   {/* Left Arrow  */}
+  <svg width="24" height="24" fill="blue" viewBox="0 0 24 24">
+    <path d="M16 5L9 12L16 19" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<div className="nxt-btn" onClick={slideForward}>
+   {/* Right Arrow */}
+  <svg width="24" height="24" fill="blue" viewBox="0 0 24 24">
+    <path d="M8 5L15 12L8 19" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
         <div className="slider">
             <ul ref={slider}>
                 <li>
