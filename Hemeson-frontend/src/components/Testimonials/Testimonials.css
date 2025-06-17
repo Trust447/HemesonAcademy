@@ -114,3 +114,15 @@
         font-size: 12px;
     }
 }
+
+@media(max-width: 400px) {
+  .slider ul {
+    width: 400%; /* 4 items x 100% */
+  }
+
+  .slider ul li {
+    width: 100%; /* Show 1 item at a time */
+    padding: 10px;
+  }
+}
+
