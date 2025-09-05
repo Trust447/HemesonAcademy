@@ -1,0 +1,12 @@
+.collage { background: var(--navy-mid); padding: 80px 24px; }
+.collage__inner { max-width: var(--max-w); margin: 0 auto; }
+.collage__title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #fff; text-align: center; margin-bottom: 48px; }
+.collage__title em { font-style: italic; color: var(--gray-mid); }
+.collage__grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 190px); gap: 3px; }
+.collage-item { display: grid; place-items: center; font-size: 2.6rem; position: relative; overflow: hidden; cursor: pointer; transition: transform var(--ease); }
+.collage-item:hover { transform: scale(1.02); z-index: 2; }
+.collage-item--tall { grid-row: span 2; }
+.collage-item--wide { grid-column: span 2; }
+.collage-item__label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(6,15,30,.9), transparent); color: #fff; padding: 20px 14px 10px; font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; transform: translateY(100%); transition: transform var(--ease-slow); }
+.collage-item:hover .collage-item__label { transform: translateY(0); }
+@media (max-width: 700px) { .collage__grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; } .collage-item--tall, .collage-item--wide { grid-row: auto; grid-column: auto; } }
