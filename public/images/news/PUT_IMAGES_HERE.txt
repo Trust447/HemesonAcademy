@@ -1,0 +1,13 @@
+Place your news article images in this folder.
+File naming examples:
+  olympiad.jpg         → for the Maths Olympiad article
+  cultural-day.jpg     → for Cultural Day
+  waec-results.jpg     → for WAEC results
+  science-lab.jpg      → for Science Lab opening
+  sports-day.jpg       → for Sports Day
+  admissions.jpg       → for Admissions article
+
+Then in src/data/site.js, update each article's image field:
+  image: '/images/news/olympiad.jpg'
+
+Recommended image size: 1200 × 700px (landscape)

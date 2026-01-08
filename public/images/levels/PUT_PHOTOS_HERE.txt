@@ -1,0 +1,10 @@
+Place your 3 school photos in this folder with these exact filenames:
+
+  nursery-basic.webp       ← your photo of Nursery + Basic pupils
+  junior-secondary.webp    ← your photo of Junior Secondary students
+  senior-secondary.webp    ← your photo of Senior Secondary students
+
+Notes:
+- Best size: 800 × 500px landscape (wider than tall)
+- The Nursery/Basic photo is shared between the first two cards
+- Photos fill the top of each level card and zoom slightly on hover
