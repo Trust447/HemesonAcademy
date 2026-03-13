@@ -1,0 +1,269 @@
+/* ═══════════════════════════════════════════════
+   PRINCIPAL'S WELCOME
+═══════════════════════════════════════════════ */
+.principal {
+  background: var(--white);
+  padding: 100px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background watermark */
+.principal::before {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  font-family: var(--font-display);
+  font-size: 400px;
+  color: var(--navy-pale);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.principal__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 72px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── PHOTO COLUMN ── */
+.principal__photo-col {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+.principal__photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+/* Decorative navy border offset */
+.principal__photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 3px solid var(--navy);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Offset accent box behind the photo */
+.principal__photo-accent {
+  position: absolute;
+  bottom: -14px;
+  right: -14px;
+  width: 70%;
+  height: 70%;
+  background: var(--navy-pale);
+  z-index: -1;
+}
+
+.principal__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform .6s ease;
+}
+
+.principal__photo-frame:hover .principal__photo {
+  transform: scale(1.03);
+}
+
+.principal__photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--navy-mid), var(--navy));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: rgba(255,255,255,0.4);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 24px;
+}
+
+/* Name plate */
+.principal__nameplate {
+  margin-top: 24px;
+  padding: 20px 0 0;
+  border-top: 2px solid var(--navy);
+}
+
+.principal__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.principal__title {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray-dark);
+}
+
+.principal__location {
+  font-size: .74rem;
+  color: var(--gray-mid);
+  margin-top: 2px;
+}
+
+/* ── SPEECH COLUMN ── */
+.principal__speech-col {
+  padding-top: 8px;
+}
+
+.principal__speech-inner {
+  position: relative;
+}
+
+.principal__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 10px 0 0;
+}
+
+.principal__heading em {
+  font-style: italic;
+  color: var(--navy-light);
+}
+
+/* Big decorative opening quote */
+.principal__quote-mark {
+  font-family: var(--font-display);
+  font-size: 7rem;
+  line-height: .6;
+  color: var(--navy-pale);
+  margin: 28px 0 -12px;
+  user-select: none;
+}
+
+.principal__body {
+  margin-top: 8px;
+}
+
+.principal__body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #3a4a5c;
+  margin-bottom: 20px;
+}
+
+.principal__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Signature block */
+.principal__signature {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--gray-light);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.principal__sig-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--navy);
+}
+
+.principal__sig-role {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray-dark);
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .principal {
+    padding: 72px 24px;
+  }
+
+  .principal__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .principal__photo-col {
+    position: static; /* unstick on mobile */
+    max-width: 340px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .principal__photo-frame {
+    aspect-ratio: 4 / 3; /* landscape on tablet/mobile — less tall */
+  }
+
+  .principal__photo {
+    object-position: top center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .principal {
+    padding: 56px 20px;
+  }
+
+  .principal__inner {
+    gap: 36px;
+  }
+
+  .principal__photo-col {
+    max-width: 100%;
+  }
+
+  .principal__photo-frame {
+    aspect-ratio: 3 / 2;
+  }
+
+  .principal__photo-accent {
+    display: none; /* cleaner on small screens */
+  }
+
+  .principal__heading {
+    font-size: 1.7rem;
+  }
+
+  .principal__quote-mark {
+    font-size: 5rem;
+  }
+
+  .principal__body p {
+    font-size: .95rem;
+  }
+}
