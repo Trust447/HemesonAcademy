@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# environment variables — never commit these
+.env
+.env.local
+
+# vite cache
+.vite/
+
