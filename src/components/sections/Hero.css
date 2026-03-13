@@ -1,0 +1,97 @@
+/* Main hero */
+.hero { position: relative; min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
+.hero__bg { position: absolute; inset: 0; background: linear-gradient(135deg, #060f1e 0%, #0b1f3a 45%, #0f2647 100%); }
+.hero__bg::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.013) 0, rgba(255,255,255,.013) 1px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, rgba(255,255,255,.013) 0, rgba(255,255,255,.013) 1px, transparent 0, transparent 50%); background-size: 30px 30px; }
+.hero__overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(6,15,30,.88) 38%, rgba(6,15,30,.2) 100%); }
+.hero__stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.28), transparent); }
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 80px 24px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Shared hero text styles */
+.hero__eyebrow { display: flex; align-items: center; gap: 12px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .26em; color: rgba(255,255,255,.45); margin-bottom: 22px; animation: slideLeft .6s ease .1s both; }
+.hero__eyebrow::before { content: ''; width: 36px; height: 1px; background: rgba(255,255,255,.3); }
+.hero__title { font-family: var(--font-display); font-size: clamp(2.8rem, 5.5vw, 5.4rem); font-weight: 900; color: #fff; line-height: 1.07; max-width: 100%; margin-bottom: 22px; animation: fadeUp .6s ease .25s both; }
+.hero__title em { font-style: italic; color: var(--gray-mid); }
+.hero__sub { font-size: 1.05rem; color: rgba(255,255,255,.68); max-width: 640px; line-height: 1.78; margin-bottom: 36px; animation: fadeUp .6s ease .4s both; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; animation: fadeUp .6s ease .55s both; }
+
+/* Additional panels */
+.hero-panel { position: relative; min-height: 82vh; display: flex; align-items: center; overflow: hidden; }
+.hero-panel__overlay { position: absolute; inset: 0; }
+.hero-panel__deco { position: absolute; right: -20px; bottom: -30px; font-family: var(--font-display); font-size: 28vw; font-weight: 900; color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; user-select: none; }
+
+/* Base panel content — equal padding both sides, no max-width fighting */
+.hero-panel__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left panels — text anchored left, capped at 560px */
+.hero-panel--academics .hero-panel__content,
+.hero-panel--sports .hero-panel__content {
+  align-items: flex-start;
+}
+
+.hero-panel--academics .hero-panel__content > *,
+.hero-panel--sports .hero-panel__content > * {
+  max-width: 560px;
+}
+
+/* Right panel — text anchored right, capped at 560px */
+.hero-panel--culture .hero-panel__content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hero-panel--culture .hero-panel__content > * {
+  max-width: 560px;
+}
+
+.hero-panel--culture .hero__eyebrow {
+  justify-content: flex-end;
+}
+
+.hero-panel--academics { background: linear-gradient(135deg, #071220, #0d2035 55%, #091828); }
+.hero-panel--academics .hero-panel__overlay { background: linear-gradient(105deg, rgba(7,18,32,.9) 40%, rgba(7,18,32,.25) 100%); }
+
+.hero-panel--culture { background: linear-gradient(135deg, #0a1525, #0f2040 55%, #071220); }
+.hero-panel--culture .hero-panel__overlay { background: linear-gradient(105deg, rgba(10,21,37,.9) 40%, rgba(10,21,37,.25) 100%); }
+
+.hero-panel--sports { background: linear-gradient(135deg, #081018, #0b1c32 50%, #060d16); }
+.hero-panel--sports .hero-panel__overlay { background: linear-gradient(105deg, rgba(8,16,24,.9) 40%, rgba(8,16,24,.25) 100%); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-panel--academics .hero-panel__content,
+  .hero-panel--culture .hero-panel__content,
+  .hero-panel--sports .hero-panel__content {
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+  }
+
+  .hero-panel--culture .hero__eyebrow {
+    justify-content: center;
+  }
+
+  .hero-panel--academics .hero-panel__content > *,
+  .hero-panel--culture .hero-panel__content > *,
+  .hero-panel--sports .hero-panel__content > * {
+    max-width: 100%;
+  }
+}
