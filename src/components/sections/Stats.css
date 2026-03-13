@@ -1,0 +1,7 @@
+.stats { background: var(--navy); }
+.stats__grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid rgba(255,255,255,.08); }
+.stat { padding: 30px 20px; border-right: 1px solid rgba(255,255,255,.08); text-align: center; transition: background var(--ease); }
+.stat:hover { background: rgba(255,255,255,.04); }
+.stat__num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 900; color: #fff; line-height: 1; }
+.stat__label { font-size: .68rem; text-transform: uppercase; letter-spacing: .16em; color: rgba(255,255,255,.38); font-weight: 700; margin-top: 6px; }
+@media (max-width: 640px) { .stats__grid { grid-template-columns: 1fr 1fr; } }
