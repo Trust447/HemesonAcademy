@@ -1,0 +1,34 @@
+.topbar {
+  background: var(--navy-mid);
+  color: rgba(255,255,255,.6);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.topbar__btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.topbar__btn:hover { opacity: .7; }
+.topbar__apply { /* same style, nothing extra needed */ }
+.topbar__wa { text-decoration: none; }
+@media (max-width: 768px) { .topbar { display: none; } }
